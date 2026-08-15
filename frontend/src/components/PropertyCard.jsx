@@ -44,7 +44,7 @@ const PropertyCard = ({ property, index }) => {
     >
       <Link to={`/properties/${property._id}`}>
         {/* Image */}
-        <div className="relative h-64 overflow-hidden bg-gray-200 dark:bg-dark-700">
+        <div className="relative h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
           {!imageLoaded && (
             <div className="absolute inset-0 skeleton" />
           )}
@@ -84,19 +84,19 @@ const PropertyCard = ({ property, index }) => {
           <div className="absolute bottom-3 right-3 flex gap-2">
             <button
               onClick={handleWishlist}
-              className="bg-white/90 dark:bg-dark-800/90 p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
+              className="bg-white/90 dark:bg-gray-800/90 p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
             >
               {isWishlisted ? (
                 <FaHeart className="text-red-500 text-lg animate-heart-beat" />
               ) : (
-                <FaRegHeart className="text-secondary-600 dark:text-gray-300 text-lg" />
+                <FaRegHeart className="text-gray-600 dark:text-gray-300 text-lg" />
               )}
             </button>
             <button
               onClick={(e) => { e.preventDefault(); toast.success('Shared!'); }}
-              className="bg-white/90 dark:bg-dark-800/90 p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
+              className="bg-white/90 dark:bg-gray-800/90 p-2 rounded-full shadow-lg hover:scale-110 transition-transform"
             >
-              <FiShare2 className="text-secondary-600 dark:text-gray-300 text-lg" />
+              <FiShare2 className="text-gray-600 dark:text-gray-300 text-lg" />
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ const PropertyCard = ({ property, index }) => {
         {/* Content */}
         <div className="p-4">
           <div className="flex justify-between items-start mb-2">
-            <h3 className="font-heading text-lg font-bold line-clamp-1 group-hover:text-primary-500 transition-colors">
+            <h3 className="font-heading text-lg font-bold line-clamp-1 group-hover:text-primary-500 transition-colors text-gray-900 dark:text-white">
               {property.title}
             </h3>
             <div className="flex items-center gap-1 text-sm text-yellow-500">
@@ -121,7 +121,7 @@ const PropertyCard = ({ property, index }) => {
 
           <div className="text-2xl font-bold text-primary-500 mb-3">
             {formatPrice(property.price)}
-            <span className="text-sm font-normal text-gray-500 ml-1">
+            <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-1">
               {property.status === 'jual' ? '' : '/bulan'}
             </span>
           </div>
