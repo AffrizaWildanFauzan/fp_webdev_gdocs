@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaHome, FaSearch, FaHeart, FaUser, FaSignOutAlt, FaSun, FaMoon, FaBars, FaTimes, FaBuilding, FaUserCircle } from 'react-icons/fa';
+import { 
+  FaHome, 
+  FaSearch, 
+  FaHeart, 
+  FaUser, 
+  FaSignOutAlt, 
+  FaSun, 
+  FaMoon, 
+  FaBars, 
+  FaTimes, 
+  FaBuilding, 
+  FaUserCircle 
+} from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { usePropertyStore } from '../store/propertyStore';
@@ -29,7 +41,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="glass-effect border-b border-gray-200 dark:border-dark-700 sticky top-0 z-40">
+    <nav className="glass-effect border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -46,9 +58,9 @@ const Navbar = () => {
                 placeholder="Cari properti..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-dark-600 bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent w-48 lg:w-64"
+                className="pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent w-48 lg:w-64"
               />
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
             </form>
 
             {navLinks.map((link) => (
@@ -98,7 +110,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
             >
               {isDark ? <FaSun /> : <FaMoon />}
             </button>
@@ -107,7 +119,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -119,7 +131,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 border-t border-gray-200 dark:border-dark-700"
+            className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700"
           >
             <form onSubmit={handleSearch} className="relative mb-4">
               <input
@@ -127,9 +139,9 @@ const Navbar = () => {
                 placeholder="Cari properti..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-dark-600 bg-transparent focus:ring-2 focus:ring-primary-500"
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-600 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500"
               />
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
             </form>
 
             <div className="space-y-3">
