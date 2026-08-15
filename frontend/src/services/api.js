@@ -1,12 +1,18 @@
 import axios from 'axios';
 
+// HARCODE LANGSUNG PAKAI URL BACKEND RAILWAY!
+const API_URL = 'https://fpwebdevgdocs-production.up.railway.app/api';
+
+console.log('🚀 API_URL:', API_URL); // Buat debugging
+
 const api = axios.create({
-    baseURL: 'http://localhost:5001/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
+// Interceptor untuk token
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -15,11 +21,10 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
+// Interceptor untuk response
 api.interceptors.response.use(
   (response) => response,
   (error) => {
