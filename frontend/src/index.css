@@ -20,9 +20,7 @@
     @apply font-heading;
   }
 
-  /* ============================================
-     DARK MODE FIX - SEMUA ELEMEN FORM
-     ============================================ */
+  /* DARK MODE FIX - SEMUA ELEMEN FORM */
   input, select, textarea {
     @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-white;
   }
@@ -86,13 +84,13 @@
 .dark input,
 .dark select,
 .dark textarea {
-  background-color: #1f2937 !important; /* gray-800 */
+  background-color: #1f2937 !important;
   color: #ffffff !important;
 }
 
 .dark input::placeholder,
 .dark textarea::placeholder {
-  color: #9ca3af !important; /* gray-400 */
+  color: #9ca3af !important;
 }
 
 .dark .card-shadow {
