@@ -54,12 +54,12 @@ const Properties = () => {
   };
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen py-8 bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
           <div>
-            <h1 className="font-heading text-3xl font-bold">Properti</h1>
+            <h1 className="font-heading text-3xl font-bold text-gray-900 dark:text-white">Properti</h1>
             <p className="text-gray-500 dark:text-gray-400">
               Menampilkan {properties.length} dari {pagination?.total || 0} properti
             </p>
@@ -68,7 +68,7 @@ const Properties = () => {
             <div className="flex gap-2 mr-2">
               <Link
                 to="/wishlist"
-                className="flex items-center gap-1 text-sm text-gray-500 hover:text-red-500 transition-colors"
+                className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 transition-colors"
               >
                 <FaHeart />
                 <span>Wishlist</span>
@@ -86,18 +86,18 @@ const Properties = () => {
             
             <button
               onClick={() => setIsFilterOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-dark-600 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300"
             >
               <FaFilter />
               Filter
             </button>
-            <div className="flex border border-gray-300 dark:border-dark-600 rounded-lg overflow-hidden">
+            <div className="flex border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 transition-colors ${
                   viewMode === 'grid' 
                     ? 'bg-primary-500 text-white' 
-                    : 'hover:bg-gray-100 dark:hover:bg-dark-700'
+                    : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                 }`}
               >
                 <FaThLarge />
@@ -107,7 +107,7 @@ const Properties = () => {
                 className={`p-2 transition-colors ${
                   viewMode === 'list' 
                     ? 'bg-primary-500 text-white' 
-                    : 'hover:bg-gray-100 dark:hover:bg-dark-700'
+                    : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                 }`}
               >
                 <FaList />
@@ -138,12 +138,12 @@ const Properties = () => {
             {properties.length === 0 && !loading && (
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-bold">Tidak Ada Properti</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Tidak Ada Properti</h3>
                 <p className="text-gray-500 dark:text-gray-400">Coba ubah filter atau kata kunci pencarian Anda.</p>
               </div>
             )}
 
-            {/* 🔥 TOMBOL HILANG KALAU SUDAH DI HALAMAN TERAKHIR */}
+            {/* Load More */}
             {pagination && page < pagination.totalPages && (
               <div className="text-center mt-8">
                 <button
