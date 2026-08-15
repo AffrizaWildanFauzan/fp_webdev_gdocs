@@ -140,7 +140,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
                   value={localFilters.minPrice}
                   onChange={(e) => handleChange('minPrice', e.target.value)}
                   placeholder="Min"
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
               <div>
@@ -150,7 +150,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
                   value={localFilters.maxPrice}
                   onChange={(e) => handleChange('maxPrice', e.target.value)}
                   placeholder="Max"
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
             </div>
@@ -163,7 +163,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
               <select
                 value={localFilters.bedrooms}
                 onChange={(e) => handleChange('bedrooms', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">Any</option>
                 {[1, 2, 3, 4, 5].map(n => (
@@ -176,7 +176,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
               <select
                 value={localFilters.bathrooms}
                 onChange={(e) => handleChange('bathrooms', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">Any</option>
                 {[1, 2, 3, 4].map(n => (
@@ -194,7 +194,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
               value={localFilters.city}
               onChange={(e) => handleChange('city', e.target.value)}
               placeholder="Cari kota..."
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             />
           </div>
 
@@ -228,7 +228,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
             <select
               value={localFilters.sort}
               onChange={(e) => handleChange('sort', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent focus:ring-2 focus:ring-primary-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500"
             >
               <option value="-createdAt">Terbaru</option>
               <option value="price">Harga Terendah</option>
@@ -248,7 +248,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
             </button>
             <button
               onClick={handleReset}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300"
             >
               Reset
             </button>
