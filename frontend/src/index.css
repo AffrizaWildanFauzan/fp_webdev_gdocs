@@ -19,6 +19,17 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
+
+  /* ============================================
+     DARK MODE FIX - SEMUA ELEMEN FORM
+     ============================================ */
+  input, select, textarea {
+    @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-white;
+  }
+
+  input::placeholder, textarea::placeholder {
+    @apply text-gray-400 dark:text-gray-500;
+  }
 }
 
 @layer components {
@@ -47,10 +58,12 @@
   }
 }
 
+/* Skeleton loading */
 .skeleton {
   @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   @apply w-2;
 }
@@ -65,4 +78,52 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-600;
+}
+
+/* ============================================
+   DARK MODE FIX - OVERRIDE GLOBAL
+   ============================================ */
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #1f2937 !important; /* gray-800 */
+  color: #ffffff !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #9ca3af !important; /* gray-400 */
+}
+
+.dark .card-shadow {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #111827 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #1f2937 !important;
 }
