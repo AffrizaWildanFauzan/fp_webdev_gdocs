@@ -47,12 +47,12 @@ const Dashboard = () => {
   ];
 
   return (
-    <div>
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen p-4 md:p-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="font-heading text-3xl font-bold mb-2">Dashboard</h1>
+        <h1 className="font-heading text-3xl font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-6">
           Selamat datang kembali, {user?.name}! Berikut ringkasan properti Anda.
         </p>
@@ -71,7 +71,7 @@ const Dashboard = () => {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
-                <p className="text-2xl font-bold mt-1">{stat.value}</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{stat.value}</p>
               </div>
               <stat.icon className={`text-2xl ${stat.color}`} />
             </div>
@@ -91,8 +91,8 @@ const Dashboard = () => {
             <FaBuilding className="text-primary-500 text-xl" />
           </div>
           <div>
-            <h4 className="font-semibold">Tambah Properti</h4>
-            <p className="text-sm text-gray-500">Tambahkan properti baru ke marketplace</p>
+            <h4 className="font-semibold text-gray-900 dark:text-white">Tambah Properti</h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Tambahkan properti baru ke marketplace</p>
           </div>
         </Link>
         <Link to="/dashboard/inquiries" className="card-shadow p-4 hover:shadow-xl transition-shadow flex items-center gap-4">
@@ -100,8 +100,8 @@ const Dashboard = () => {
             <FaEnvelope className="text-purple-500 text-xl" />
           </div>
           <div>
-            <h4 className="font-semibold">Lihat Inquiries</h4>
-            <p className="text-sm text-gray-500">Kelola pertanyaan dari pembeli</p>
+            <h4 className="font-semibold text-gray-900 dark:text-white">Lihat Inquiries</h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Kelola pertanyaan dari pembeli</p>
           </div>
         </Link>
       </div>
@@ -114,14 +114,14 @@ const Dashboard = () => {
           transition={{ delay: 0.2 }}
           className="card-shadow p-4"
         >
-          <h3 className="font-heading text-lg font-bold mb-4">Views per Bulan</h3>
+          <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white mb-4">Views per Bulan</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={stats.monthlyData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="month" stroke="#9ca3af" />
+                <YAxis stroke="#9ca3af" />
+                <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#fff' }} />
                 <Bar dataKey="views" fill="#D4AF37" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -134,15 +134,15 @@ const Dashboard = () => {
           transition={{ delay: 0.3 }}
           className="card-shadow p-4"
         >
-          <h3 className="font-heading text-lg font-bold mb-4">Inquiries per Bulan</h3>
+          <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white mb-4">Inquiries per Bulan</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={stats.monthlyData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Line type="monotone" dataKey="inquiries" stroke="#1A2A3A" strokeWidth={2} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="month" stroke="#9ca3af" />
+                <YAxis stroke="#9ca3af" />
+                <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#fff' }} />
+                <Line type="monotone" dataKey="inquiries" stroke="#D4AF37" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -157,7 +157,7 @@ const Dashboard = () => {
         className="card-shadow p-4 mt-6"
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="font-heading text-lg font-bold">Properti Terbaru</h3>
+          <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white">Properti Terbaru</h3>
           <Link to="/dashboard/properties" className="text-sm text-primary-500 hover:underline">
             Lihat Semua →
           </Link>
@@ -166,35 +166,35 @@ const Dashboard = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-dark-700">
-                  <th className="text-left py-2 px-3">Judul</th>
-                  <th className="text-left py-2 px-3">Harga</th>
-                  <th className="text-left py-2 px-3">Status</th>
-                  <th className="text-left py-2 px-3">Views</th>
+                <tr className="border-b border-gray-200 dark:border-gray-700">
+                  <th className="text-left py-2 px-3 text-gray-600 dark:text-gray-400">Judul</th>
+                  <th className="text-left py-2 px-3 text-gray-600 dark:text-gray-400">Harga</th>
+                  <th className="text-left py-2 px-3 text-gray-600 dark:text-gray-400">Status</th>
+                  <th className="text-left py-2 px-3 text-gray-600 dark:text-gray-400">Views</th>
                 </tr>
               </thead>
               <tbody>
                 {stats.properties.slice(0, 5).map((prop) => (
-                  <tr key={prop._id} className="border-b border-gray-200 dark:border-dark-700 hover:bg-gray-50 dark:hover:bg-dark-700">
-                    <td className="py-2 px-3">{prop.title}</td>
-                    <td className="py-2 px-3">{formatPrice(prop.price)}</td>
+                  <tr key={prop._id} className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <td className="py-2 px-3 text-gray-900 dark:text-white">{prop.title}</td>
+                    <td className="py-2 px-3 text-primary-500 font-semibold">{formatPrice(prop.price)}</td>
                     <td className="py-2 px-3">
                       <span className={`px-2 py-1 rounded-full text-xs ${
-                        prop.statusProperty === 'tersedia' ? 'bg-green-100 text-green-700' :
-                        prop.statusProperty === 'terjual' ? 'bg-red-100 text-red-700' :
-                        'bg-yellow-100 text-yellow-700'
+                        prop.statusProperty === 'tersedia' ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' :
+                        prop.statusProperty === 'terjual' ? 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300' :
+                        'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
                       }`}>
                         {prop.statusProperty}
                       </span>
                     </td>
-                    <td className="py-2 px-3">{prop.views || 0}</td>
+                    <td className="py-2 px-3 text-gray-600 dark:text-gray-400">{prop.views || 0}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         ) : (
-          <p className="text-gray-500 text-center py-4">Belum ada properti.</p>
+          <p className="text-gray-500 dark:text-gray-400 text-center py-4">Belum ada properti.</p>
         )}
       </motion.div>
     </div>
